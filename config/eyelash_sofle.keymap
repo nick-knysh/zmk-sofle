@@ -27,6 +27,10 @@
     trigger-period-ms = <16>;
 };
 
+&lt {
+    tapping-term-ms = 150; // default 200
+};
+
 
 / {
 
@@ -40,52 +44,63 @@
     keymap {
         compatible = "zmk,keymap";
 
-        layer0 {
+        layer_0 {
             bindings = <
-&kp ESC     &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp BACKSPACE
-&kp TAB     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp BSLH
-&kp CAPS    &kp A      &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
-&kp LSHFT   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp ENTER
-&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1   &kp SPACE    &kp ENTER        &kp SPACE  &kp ENTER  &mo 2      &kp RIGHT_SHIFT  &kp DELETE
+&kp ESC     &kp N1     &kp N2        &kp N3        &kp N4       &kp N5      &none       &kp N6     &kp N7           &kp N8     &kp N9       &kp N0      &kp GRAVE
+&kp TAB     &kp Q      &kp W         &kp E         &kp R        &kp T       &none       &kp Y      &kp U            &kp I      &kp O        &kp P       &kp BSLH
+&kp LSHFT   &kp A      &kp S         &kp D         &lt 3 F      &kp G       &none       &kp H      &kp J            &kp K      &kp L        &kp SEMI    &kp APOS
+&kp LCTRL   &kp Z      &kp X         &kp C         &kp V        &kp B       &none       &kp N      &kp M            &kp COMMA  &kp DOT      &kp FSLH    &kp ENTER
+&none       &mo 3      &kp LEFT_ALT  &kp LEFT_GUI  &mo SPACE    &mo 1       &none       &mo 2      &kp BACKSPACE    &kp ENTER  &kp DELETE   &mo 4
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
-            display-name = "LAYER0";
+            display-name = "QWERTY";
         };
 
         layer_1 {
             bindings = <
-&kp GRAVE   &kp F1           &kp F2          &kp F3           &kp F4           &kp F5             &mmv MOVE_UP     &kp F6           &kp F7           &kp F8      &kp F9     &kp F10           &trans
-&trans      &kp GRAVE        &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp PG_UP        &kp END          &kp UP      &kp HOME   &kp MINUS         &kp EQUAL
-&trans      &kp TILDE        &trans          &trans           &trans           &mkp MB5           &mmv MOVE_LEFT   &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT  &kp F11    &kp F12           &trans
-&kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans      &trans     &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &none   &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT   &none   &kp CARET   &kp AMPS    &kp STAR    &kp MINUS   &kp EQUAL   &trans
+&trans      &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &none   &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp BSLH
+&trans      &kp UNDER   &kp LBRC    &kp LBKT    &kp LPAR    &kp PIPE    &none   &kp EQUAL   &kp RPAR    &kp LBKT    &kp RBRC    &kp BSLH    &kp PLUS
+&none       &trans      &trans      &trans      &trans      &trans      &none   &trans      &trans      &trans      &trans      &trans
             >;
 
-            display-name = "layer1";
-            sensor-bindings = <&scroll_encoder>;
+            display-name = "nUm";
         };
 
         layer_2 {
             bindings = <
-&kp TILDE  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &mmv MOVE_UP     &kp F6  &kp F7  &kp F8      &kp F9     &kp F10      &trans
-&trans     &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans          &mmv MOVE_DOWN   &trans  &trans  &kp F11     &kp F12    &kp UNDER    &kp PLUS
-&trans     &out OUT_USB  &out OUT_BLE    &trans        &trans        &trans          &mmv MOVE_LEFT   &trans  &trans  &trans      &trans     &kp LBRC     &kp RBRC
-&trans     &sys_reset    &trans          &bootloader   &trans        &trans          &mmv MOVE_RIGHT  &trans  &trans  &sys_reset  &soft_off  &bootloader  &trans
-&trans     &trans        &trans          &trans        &trans        &trans          &mkp LCLK        &trans  &trans  &trans      &trans     &trans
+&trans      &trans          &trans        &trans     &trans         &trans          &none       &trans          &trans        &trans        &kp C_MUTE    &kp C_VOL_DN      &kp C_VOL_UP
+&kp F11     &kp F1          &kp F2        &kp F3     &kp F4         &kp F5          &none       &kp F6          &kp F7        &kp F8        &kp F9        &kp F10           &kp F12      
+&trans      &msc SCRL_LEFT  &trans        &trans     &trans         &msc SCRL_RIGHT &none       &msc SCRL_UP    &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT         &msc SCRL_DOWN	
+&trans      &trans          &kp LG(X)     &kp LG(C)  &kp LG(V)      &kp LG(Z)       &none       &kp PIPE        &kp HOME      &kp PG_DN     &kp PG_UP     &kp END           &trans
+&none       &trans          &trans        &trans     &trans         &trans          &none       &trans          &trans        &trans        &trans        &trans     
             >;
 
-            sensor-bindings = <&scroll_encoder>;
+            display-name = "nAv";
         };
 
         layer_3 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans      &trans        &trans     &trans         &trans         &none       &trans       &trans        &trans        &trans        &trans       &trans
+&trans      &trans      &trans        &trans     &trans         &trans         &none       &trans       &kp APOS      &kp MINUS     &kp BSLH      &trans       &trans
+&trans      &trans      &trans        &trans     &trans         &trans         &none       &kp PIPE     &kp DQT       &kp UNDER     &kp FSLH      &kp GRAVE    &trans
+&trans      &trans      &trans        &trans     &trans         &trans         &none       &kp LC(Z)    &kp LC(V)     &kp LC(C)     &kp LC(X)     &trans       &trans
+&none       &trans      &trans        &trans     &trans         &trans         &none       &trans       &trans        &trans        &trans        &trans     
             >;
+
+            display-name = "rsig";
         };
-    };
+
+        layer_4 {
+            bindings = <
+&trans        &bt BT_SEL 0      &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &none   &rgb_ug RGB_OFF   &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI   &trans
+&bt BT_CLR    &bt BT_CLR_ALL    &trans          &mmv MOVE_UP    &trans          &bootloader     &none   &bootloader       &trans          &trans           &rgb_ug RGB_BRI  &rgb_ug RGB_BRD   &trans
+&out OUT_USB  &trans            &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &trans          &none   &soft_off         &trans          &mkp MCLK        &trans           &trans            &trans
+&out OUT_BLE  &trans            &trans          &bootloader     &trans          &sys_reset      &none   &sys_reset        &mkp LCLK       &mkp RCLK        &trans           &trans            &trans
+&none         &trans            &trans          &trans          &trans          &trans          &none   &trans            &trans          &trans           &trans           &trans
+            >;
+
+            display-name = "settings";
+        };
 };
