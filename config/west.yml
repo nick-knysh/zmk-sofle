@@ -18,7 +18,7 @@ manifest:
     #   remote: gpeye                       #new entry
     #   revision: main                      #new entry
     - name: nice-view-mod
-      remote: nick-knysh
+      remote: nice-view-mod
       revision: main
     - name: zmk
       remote: zmkfirmware
