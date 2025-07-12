@@ -17,6 +17,9 @@ manifest:
     # - name: urchin-peripheral-animation   #new entry
     #   remote: gpeye                       #new entry
     #   revision: main                      #new entry
+    - name: nice-view-mod
+      remote: nick-knysh
+      revision: main
     - name: zmk
       remote: zmkfirmware
       revision: main
