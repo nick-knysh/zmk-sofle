@@ -61,7 +61,7 @@
 &trans      &trans      &trans      &trans      &trans      &trans      &none   &trans      &trans      &trans      &trans      &trans      &trans
 &trans      &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT   &none   &kp CARET   &kp AMPS    &kp STAR    &kp MINUS   &kp EQUAL   &trans
 &trans      &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &none   &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp BSLH
-&trans      &kp UNDER   &kp LBRC    &kp LBKT    &kp LPAR    &kp PIPE    &none   &kp EQUAL   &kp RPAR    &kp RBKT    &kp RBRC    &kp BSLH    &kp PLUS
+&trans      &kp UNDER   &kp LBRC    &kp LBKT    &kp LPAR    &kp DEL     &none   &kp EQUAL   &kp RPAR    &kp RBKT    &kp RBRC    &kp BSLH    &kp PLUS
 &none       &trans      &trans      &trans      &trans      &trans      &none   &trans      &kp ENTER   &trans      &trans      &trans
             >;
 
@@ -74,7 +74,7 @@
 &kp F11     &kp F1          &kp F2        &kp F3     &kp F4         &kp F5          &none       &kp F6          &kp F7        &kp F8        &kp F9        &kp F10           &kp F12      
 &trans      &msc SCRL_RIGHT &trans        &trans     &trans         &msc SCRL_LEFT  &none       &msc SCRL_UP    &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT         &msc SCRL_DOWN	
 &trans      &trans          &kp LG(X)     &kp LG(C)  &kp LG(V)      &kp LG(Z)       &none       &kp PIPE        &kp HOME      &kp PG_DN     &kp PG_UP     &kp END           &trans
-&none       &trans          &trans        &trans     &trans         &trans          &none       &trans          &trans        &trans        &trans        &trans     
+&none       &trans          &trans        &trans     &trans         &trans          &none       &trans          &kp DEL       &trans        &trans        &trans     
             >;
 
             display-name = "nAv";
@@ -83,8 +83,8 @@
         layer_3 {
             bindings = <
 &trans      &trans      &trans        &trans     &trans         &trans         &none       &trans       &trans        &trans        &trans        &trans       &trans
-&trans      &trans      &trans        &trans     &trans         &trans         &none       &trans       &kp APOS      &kp MINUS     &kp BSLH      &trans       &trans
-&trans      &trans      &trans        &trans     &trans         &trans         &none       &kp PIPE     &kp DQT       &kp UNDER     &kp FSLH      &kp GRAVE    &trans
+&trans      &trans      &trans        &trans     &trans         &trans         &none       &trans       &kp UNDER     &kp DQT       &kp BSLH      &trans       &trans
+&trans      &trans      &trans        &trans     &trans         &trans         &none       &kp PIPE     &kp MINUS     &kp APOS      &kp FSLH      &kp GRAVE    &trans
 &trans      &trans      &trans        &trans     &trans         &trans         &none       &kp LC(Z)    &kp LC(V)     &kp LC(C)     &kp LC(X)     &trans       &trans
 &none       &trans      &trans        &trans     &trans         &trans         &none       &trans       &trans        &trans        &trans        &trans     
             >;
