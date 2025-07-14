@@ -72,7 +72,7 @@
             bindings = <
 &trans      &trans          &trans        &trans     &trans         &trans          &none       &trans          &trans        &trans        &kp C_MUTE    &kp C_VOL_DN      &kp C_VOL_UP
 &kp F11     &kp F1          &kp F2        &kp F3     &kp F4         &kp F5          &none       &kp F6          &kp F7        &kp F8        &kp F9        &kp F10           &kp F12      
-&trans      &msc SCRL_LEFT  &trans        &trans     &trans         &msc SCRL_RIGHT &none       &msc SCRL_UP    &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT         &msc SCRL_DOWN	
+&trans      &msc SCRL_RIGHT &trans        &trans     &trans         &msc SCRL_LEFT  &none       &msc SCRL_UP    &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT         &msc SCRL_DOWN	
 &trans      &trans          &kp LG(X)     &kp LG(C)  &kp LG(V)      &kp LG(Z)       &none       &kp PIPE        &kp HOME      &kp PG_DN     &kp PG_UP     &kp END           &trans
 &none       &trans          &trans        &trans     &trans         &trans          &none       &trans          &trans        &trans        &trans        &trans     
             >;
